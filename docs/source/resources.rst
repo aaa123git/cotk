@@ -229,12 +229,11 @@ OpenSubtitles
     Introduction
         Opensubtitle dataset is collected from movie subtitles.
         To construct this dataset for single-turn dialogue generation,
-        we regard a pair of adjacent sentences as one dialogue turn.
+        we follow [3] and regard a pair of adjacent sentences as one dialogue turn.
         We set the former sentence as a post and the latter one as the corresponding response.
-
-        TODO:
-            Is the dataset same with the origin one? How do you select, split the dataset?
-            Is this dataset tokenized? Containing capital character? And more differences from the original dataset.
+        We remove the pairs whose lengths are extremely long or short,
+        and randomly sample 1,144,949/20,000/10,000 pairs as our train/dev/test set.
+        The dataset is tokenized and all the tokens are in lower-case.
 
     Statistic
         ======================================  =========  =========  =========
@@ -251,6 +250,8 @@ OpenSubtitles
 
         [2] J. Tiedemann, 2016, `Finding Alternative Translations in a Large Corpus of Movie Subtitles <http://www.lrec-conf.org/proceedings/lrec2016/pdf/62_Paper.pdf>`_.
         In Proceedings of the 10th International Conference on Language Resources and Evaluation (LREC 2016)
+		
+        [3] Vinyals O, Le Q. `A Neural Conversational Model <https://arxiv.org/pdf/1506.05869.pdf>`_. arXiv preprint arXiv:1506.05869, 2015.
 
 OpenSubtitles_small
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
