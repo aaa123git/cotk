@@ -171,7 +171,10 @@ MSCOCO
         MSCOCO is a new dataset gathering images of complex everyday scenes containing common objects
         in their natural context. We neglect the images and just employ the corresponding caption.
 
-        The original data is `2017 Train/Val annotations [241MB] <http://images.cocodataset.org/annotations/annotations_trainval2017.zip>`_ . We use the same train set as original data, but split the val set into dev(odd-numbered sentences) and test set(even-numbered sentences). We extract the caption and use `nltk.tokenize.word_tokenize` for tokenization. We also capitalize each sentence and add full stop to it if it does not have one.
+        The original data is `2017 Train/Val annotations [241MB] <http://images.cocodataset.org/annotations/annotations_trainval2017.zip>`_ .
+        We use the same train set as original data, but split the val set into dev(odd-numbered sentences) and test set(even-numbered sentences).
+        We extract the caption and use `nltk.tokenize.word_tokenize` for tokenization.
+        We also capitalize each sentence and add full stop to it if it does not have one.
 
     Statistic
         ======================================  =======  ======  ======
@@ -329,6 +332,7 @@ SwitchboardCorpus
         same as theirs (in their version, utterances are lowercase and are not tokenized).
 
         However, there are two differences between our data with theirs:
+
         * We ensure that any two consecutive utterances come from different speakers,
           by concatenating the original consecutive utterances from the same speakers in
           data pre-processing of :class:`.dataloader.SwitchboardCorpus`.
