@@ -20,9 +20,7 @@ your models fairly with baselines.
    notes/installation
    notes/quickstart
    notes/tutorial_core
-   notes/tutorial_reproduction
-   notes/tutorial_dashboard
-   notes/cli_usage
+   notes/tutorial_cli
    notes/extend
    notes/FAQ
 

@@ -9,10 +9,8 @@
 -  nltk >= 3.4
 -  tqdm >= 4.30
 -  checksumdir >= 1.1
--  pytorch >= 1.0.0 (optional, used for calculation of perplexity)
--  transformers (optional, used for tokenizer of pretrained models)
-
-We support Unix, Windows, and macOS.
+-  pytorch >= 1.0.0 (optional)
+-  pytorch-pretrained-bert (optional)
 
 ### Install from pip
 
@@ -37,3 +35,4 @@ You can simply get the latest stable version from pip using
     pip install -e .
 ```
 
+* If you want to run the models in ``./models``, you have to additionally install [TensorFlow](https://www.tensorflow.org) or [PyTorch](https://pytorch.org/).

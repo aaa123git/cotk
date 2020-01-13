@@ -1,0 +1,37 @@
+Any ideas on how lts will be released ?  
+ already is  
+ We are talking 12.04 not 10.04 
+
+how much hdd use ubuntu default install ?  
+ https://help.ubuntu.com/community/Installation/SystemRequirements  it wont require 15gb to be honest...  
+ thats why i ask how much is default install ? :) 
+
+in my country its nearly the 27th  when will 12.10 be out?  
+ planned Oct 18th according to this. https://wiki.ubuntu.com/QuantalQuetzal/ReleaseSchedule?action=show&redirect=QReleaseSchedul  
+ thanx 
+
+it's not out  
+ they probabaly are waiting for all the mirrors to sync. the release annocement will be after that.  
+ waiting for many things to be setup  final warning - you don't know when it will be released, so don't suggest it will be any moment 
+
+are the ext4 drivers stable?  
+ I am not sure but the last time I checked, it wasn't  There have been numerous reports of data loss or corruption  
+ you sound like it's updating to skynet. ;) 
+
+Greetings  I am running Ubuntu 12.04 on a dualscreen set-up. I was wondering if it's possible to have the panel items (notifications, time, auth, etc.) only on one screen, rather than both  
+ you're on the wrong channel for that  
+ Oh, so now wanting to know my driver version is not a support discussion? :\ 
+
+Multiply  or uee ctrl arrow left to return to the gui  
+ or ctrl-arrow right (multiple times) :P  
+  may depend on the timezone ;) 
+
+or use do-release-upgrade in a terminal and see what it return  
+ it will break things horribly. You can downgrade OS once the upgrade process has started  *can't downgrade  
+  ikonia tnx for the warning, glad nothing irreversible happened 
+
+anyone able to help with repairing a broken ubuntu install?  
+ what is the problem?  
+ uninstalled nvidia drivers, rebooted, now the system immediately enters into powersave mode for the monitor after entering a passphrase  i've tried booting into recovery mode through grub, makes no difference  
+ while i will admit that nvidia drivers are not my specialty, maybe either adding a user that is in a different group or upgrading the kernel would help? 
+

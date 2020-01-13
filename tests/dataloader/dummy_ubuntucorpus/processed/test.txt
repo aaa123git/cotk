@@ -1,0 +1,44 @@
+anyone knows why my stock oneiric exports env var 'USERNAME'?  I mean what is that used for?  I know of $USER but not $USERNAME .  My precise install doesn't export USERNAME  
+ looks like it used to be exported by lightdm, but the line had the comment "// FIXME: Is this required?" so I guess it isn't surprising it is gone  
+ thanks!  How the heck did you figure that out?  
+ https://bugs.launchpad.net/lightdm/+bug/864109/comments/3  
+ nice thanks! 
+
+i set up my hd such that i have to type a passphrase to access it at boot. how can i remove that passwrd, and just boot up normal. i did this at install, it works fine, just tired of having reboots where i need to be at terminal to type passwd in. help?  
+ backup your data, and re-install without encryption "might" be the easiest method  
+ so you dont know, ok, anyone else?  you are like, yah my mouse doesnt work, reinstall your os lolol what a joke 
+
+im trying to use ubuntu on my macbook pro retina  i read in the forums that ubuntu has a apple version now?  
+  not that ive ever heard of..  normal ubutnu should work on an intel based mac. there is the PPC version also.   you want total control? or what are you wanting exactly?  
+ just wondering how it runs 
+
+no suggestions?  links?  how can i remove luks passphrase at boot. i dont want to use feature anymore...  
+ you may need to create a new volume  
+ that leads me to the next question lol... i dont know how to create new volumes exactly in cmdline, usually i use a gui. im just trying to access this server via usb loaded with next os im going to load, the luks pw is stopping me  
+ for something like that I would likely use something like a live gparted disk to avoid the conflict of editing from the disk  
+ you cant load anything via usb or cd when luks is running  it wont allow usb boot, i tried with 2 diff usb drives 
+
+I just added a second usb printer but not sure what the uri should read - can anyone help with usb printers?  
+ firefox localhost:631  
+ firefox?  
+ yes  firefox localhost:631  firefox http://localhost:631  cups has a web based interface  
+ i was setting it up under the printer configuration  thanks! 
+
+no suggestions?  links?  
+ plrase restate your question  sorry i have no idea what that is  You can disable luks password prompt at boot by adding "rd_NO_LUKS" kernel flag to grub.conf  
+ yah!! where, grub.cfg? syntax please. thanks  whats the syntax for rd_NO_LUKS? where to put in grub file  
+ it doesn't say  can you reformat the disk? 
+
+what you looking for linuxuz3r?  no i mean are you looking for a spefic program?  im not sure if there is anything better then sourceforge  
+ no particular program, anything that interest me then contribute to the source  i wanna learn how to read code  
+ there is one that escapes me at the moment  most people use sourceforge 
+
+I know I'm probably doing something stupid here, but I can't figure out how to install ubuntu to sdb. All the installer shows is sda. gparted can see sdb  Any ideas?  
+  use the 'somthign else/custome' option and make your partitions on sdb as you want. ie:   sdb1 = /  sdb2 = /home/ sdb3 = swap.  
+ Yeah when I choose "something else" I'm not seeing sdb in there either. I'm not sure why  
+  You can partion the HD with gparted from the live cd, then start the installer.. perhaps.   thats how i tend to do it.  The installers partion manager tool is a bit. annoying.  I also noticed the installer did not have a 'Install to a specific drive using the whold drive' option..  sort of annoying it will automate other things.. but not a fairly common case of a Seperate HD Just for linux. 
+
+Hey guys, I'm trying to write a script. I need to know what network-manager is doing when I click the wifi icon, and click the network that I'm already connected to. Doing so tells network-manager to disconnect then reconnect to the same network.  
+ What is your queston?  "admin user"?  
+ I connect using the same user that I log into when I boot up.  ^^ 
+
