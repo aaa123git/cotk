@@ -895,12 +895,7 @@ class Session(Sentence):
 	A field for session. Each session is a list of sentences.
 
 	{Sentence.INIT_DOCSTRING}
-
-			max_turn_length (int, _InfiniteLength, optional): Set the maximum turn length of a session.
-				If it's an integer, any session, whose turn length is more than ``max_turn_length`` is shortened to
-				first ``max_sent_length`` turns. The left turns are ignored.
-				If it's ``None`` or ``Sentence.INFINITE_LENGTH``, sessions won't be shortened and all turns are remained.
-				Default: ``None``.
+	{MAX_TURN_LENGTH_DOCS}
 
 	{SESSION_INPUT_FORMAT}
 	"""
@@ -908,6 +903,14 @@ class Session(Sentence):
 	SESSION_INPUT_FORMAT = r"""
 	Input Format
 		This field read multiple line of sentences per sample, until a blank line.
+	"""
+
+	MAX_TURN_LENGTH_DOCS = r"""
+			max_turn_length (int, _InfiniteLength, optional): Set the maximum turn length of a session.
+				If it's an integer, any session, whose turn length is more than ``max_turn_length`` is shortened to
+				first ``max_sent_length`` turns. The left turns are ignored.
+				If it's ``None`` or ``Sentence.INFINITE_LENGTH``, sessions won't be shortened and all turns are remained.
+				Default: ``None``.	
 	"""
 
 	def __init__(self, tokenizer: Union[None, Tokenizer, str] = None,

@@ -20,14 +20,28 @@ if False:  # for type check # pylint: disable=using-constant-test
 class MultiTurnDialog(LanguageProcessing):
 	r"""Base class for multi-turn dialog datasets. This is an abstract class.
 
-	Arguments:
-
-	Attributes:{ATTRIBUTES}
-
-	Notes:
-		A :class:`Session` field must be set as default field. When invoking :meth:`__init__` of :class:`MultiTurnDialog`,
-		the default field, which may be reset in subclass, is set as self.fields['train']['session'].
+	Arguments:{LanguageProcessing.FILE_ID_DOCS}
+		{LanguageProcessing.TOKENIZER_DOCS}
+		{LanguageProcessing.MAX_SENT_LENGTH_DOCS}
+		{MAX_TURN_LENGTH_DOCS}
+		{LanguageProcessing.CONVERT_TO_LOWER_LETTER_DOCS}
+		{LanguageProcessing.MIN_FREQUENT_VOCAB_TIMES_DOCS}
+		{LanguageProcessing.MIN_RARE_VOCAB_TIMES_DOCS}
+		{LanguageProcessing.FIELD_DETAILS}
+		{PRETRAINED_DOCS}
 	"""
+	MAX_TURN_LENGTH_DOCS = Session.MAX_TURN_LENGTH_DOCS
+	PRETRAINED_DOCS = r"""
+			pretrained (str, optional): Use :ref:`pretrained field<pretrained_field_ref>` instead of :class:`SessionDefault`. 
+				If you want to use pretrained models, such as GPT2 or BERT, ``pretrained`` must be specified and 
+				``tokenizer`` must be a :class:`PretrainedTokenizer` object.
+				If ``fields`` is ``None`` and ``pretrained`` is ``None``, ``fields`` will be set as ``OrderedDict([['session', 'SessionDefault']])``. 
+				If ``fields`` is ``None`` and ``pretrained`` is "bert", ``fields`` will be set as ``OrderedDict([['session', 'SessionBERT']])``.
+				If ``fields`` is ``None`` and ``pretrained`` is "pgt2", ``fields`` will be set as ``OrderedDict([['session', 'SessionGPT2']])``.
+	"""
+
+	# Notes: A :class:`Session` field must be set as default field. When invoking :meth:`__init__` of :class:`MultiTurnDialog`,
+	# the default field, which may be reset in subclass, is set as self.fields['train']['session'].
 
 	_version = 2
 
