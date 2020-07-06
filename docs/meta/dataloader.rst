@@ -253,6 +253,9 @@ We design different field for different pretrained models, including:
 * GPT2: :class:`SentenceGPT2`, :class:`SessionGPT2`
 * BERT: :class:`SentenceBERT`, :class:`SessionBERT`
 
+If you want to use pretrained models (such as GPT2 or BERT) in a dataloader, ``pretrained`` must be specified and
+``tokenizer`` must be a :class:`PretrainedTokenizer` object.
+
 .. _tokenizer_ref:
 
 Tokenizer

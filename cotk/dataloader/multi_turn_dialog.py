@@ -27,17 +27,46 @@ class MultiTurnDialog(LanguageProcessing):
 		{LanguageProcessing.CONVERT_TO_LOWER_LETTER_DOCS}
 		{LanguageProcessing.MIN_FREQUENT_VOCAB_TIMES_DOCS}
 		{LanguageProcessing.MIN_RARE_VOCAB_TIMES_DOCS}
-		{LanguageProcessing.FIELD_DETAILS}
+		{FIELD_DETAILS}
 		{PRETRAINED_DOCS}
 	"""
 	MAX_TURN_LENGTH_DOCS = Session.MAX_TURN_LENGTH_DOCS
+
+	FIELD_DETAILS = r"""
+			fields (List, OrderedDict, Dict):
+				This arguments supports multiple input types:
+
+				* If ``OrderDict`` or ``List``, it specify ``data format`` of the ``"train"``, ``"dev"``, ``"test"`` set.
+
+						* A ``data format`` should be an ``OrderedDict`` or a ``List[Tuple]`` can be converted to ``OrderedDict``.
+						* The ``key`` of ``data format`` is the name of a Field (used by :meth:`.get_batch`),
+						  and the ``value`` is either a class name of a Field or a :class:`Field` object.
+						* Examples:
+
+							>>> data_format = [("session", "SessionDefault")]
+							
+						* Examples:
+
+							>>> fields = data_format
+
+							equals to
+
+							>>> fields = {"train": data_format, "dev": data_format, "test": data_format}
+
+				* If ``Dict``, ``fields[key]`` describes ``data format`` of the set named ``key``. Examples:
+
+						>>> fields = {"train": data_format, "extra": data_format}
+					
+
+				If ``fields`` isn't specified, we'll provide a default value. If ``pretrained`` is ``None``,
+				``fields`` will be set as ``OrderedDict([['session', 'SessionDefault']])``. Otherwise, ``fields`` will
+				be set as ``OrderedDict([['session', `Pretrained Session Field`]])``. 
+
+				See :ref:`how to create a dataloader<customized_tasks_ref>`."""
+
 	PRETRAINED_DOCS = r"""
-			pretrained (str, optional): Use :ref:`pretrained field<pretrained_field_ref>` instead of :class:`SessionDefault`. 
-				If you want to use pretrained models, such as GPT2 or BERT, ``pretrained`` must be specified and 
-				``tokenizer`` must be a :class:`PretrainedTokenizer` object.
-				If ``fields`` is ``None`` and ``pretrained`` is ``None``, ``fields`` will be set as ``OrderedDict([['session', 'SessionDefault']])``. 
-				If ``fields`` is ``None`` and ``pretrained`` is "bert", ``fields`` will be set as ``OrderedDict([['session', 'SessionBERT']])``.
-				If ``fields`` is ``None`` and ``pretrained`` is "pgt2", ``fields`` will be set as ``OrderedDict([['session', 'SessionGPT2']])``.
+			pretrained (str, optional): If ``fields`` is not specified and ``pretrained`` is not None,
+				:ref:`Pretrained Session Field<pretrained_field_ref>` instead of :class:`SessionDefault`, is used as the default field.
 	"""
 
 	# Notes: A :class:`Session` field must be set as default field. When invoking :meth:`__init__` of :class:`MultiTurnDialog`,
