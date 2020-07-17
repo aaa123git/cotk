@@ -25,48 +25,16 @@ class SentenceClassification(LanguageProcessing):
 		{PRETRAINED_DOCS}
 
 	"""
-	FIELD_DETAILS = r"""
-			fields (List, OrderedDict, Dict):
-				This arguments supports multiple input types:
-
-				* If ``OrderDict`` or ``List``, it specify ``data format`` of the ``"train"``, ``"dev"``, ``"test"`` set.
-
-						* A ``data format`` should be an ``OrderedDict`` or a ``List[Tuple]`` can be converted to ``OrderedDict``.
-						* The ``key`` of ``data format`` is the name of a Field (used by :meth:`.get_batch`),
-						  and the ``value`` is either a class name of a Field or a :class:`Field` object.
-						* Examples:
-
-							>>> data_format = [('sent', 'SentenceDefault'), ('label', 'DenseLabel')]
-							
-						* Examples:
-
-							>>> fields = data_format
-
-							equals to
-
-							>>> fields = {"train": data_format, "dev": data_format, "test": data_format}
-
-				* If ``Dict``, ``fields[key]`` describes ``data format`` of the set named ``key``. Examples:
-
-					>>> fields = {"train": data_format, "extra": data_format}
-
-
-				If ``fields`` isn't specified, we'll provide a default value. If ``pretrained`` is ``None``,
-				``fields`` will be set as ``OrderedDict([('sent', 'SentenceDefault'), ('label', 'DenseLabel')])``. 
-				Otherwise, ``fields`` will be set as ``OrderedDict([('sent', `Pretrained Sentence Field`), ('label', 'DenseLabel')])``. 
-
-				See :ref:`how to create a dataloader<customized_tasks_ref>`."""
-
 
 	PRETRAINED_DOCS = r"""
-			pretrained (str, optional): If ``fields`` is not specified and ``pretrained`` is not None, 
-				Use :ref:`Pretrained Sentence Field<pretrained_field_ref>` instead of :class:`SentenceDefault`, is used as the default field.
-	"""
+			pretrained (str, optional): Using a pretrained field. If specific,
+				pretrained fields will be used instead of :class:`SentenceDefault` as the default field.
+				See :ref:`Pretrained Fields<pretrained_field_ref>` for explainations and possible values."""
 
 	# Notes: A :class:`Sentence` field must be set as default field. When invoking :meth:`__init__` of :class:`SentenceClassification`,
 	# the default field, which may be reset in subclass, is set as self.fields['train']['sent'].
-	_version = 2
 
+	_version = 2
 
 	def __init__(self, file_id: str,
 				 tokenizer=None,
